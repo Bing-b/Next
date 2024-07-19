@@ -15,6 +15,19 @@ const config: Config = {
       },
     },
   },
+  variants: {
+    extend: {
+      backdropBlur: ["responsive"],
+      backdropBrightness: ["responsive"],
+      backdropContrast: ["responsive"],
+      backdropGrayscale: ["responsive"],
+      backdropHueRotate: ["responsive"],
+      backdropInvert: ["responsive"],
+      backdropOpacity: ["responsive"],
+      backdropSaturate: ["responsive"],
+      backdropSepia: ["responsive"],
+    },
+  },
   plugins: [],
 };
 export default config;
