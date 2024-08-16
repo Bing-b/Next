@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, useEffect } from "react";
 
 export default function About() {
@@ -13,7 +15,7 @@ export default function About() {
 
   function handleClick() {
     setLikes(likes + 1);
-    console.log("感谢");
+    console.log("感谢您嘞");
   }
 
   return (

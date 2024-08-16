@@ -1,0 +1,276 @@
+.productCardParent {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.productCard {
+  height: 650px;
+  width: 1170px;
+  background-color: black;
+  padding-top: 5px;
+  background-image: url("../../assets/images/hero.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform-origin: top;
+  animation: rotation 1.5s;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotateX(180deg);
+  }
+
+  to {
+    transform: rotateX(0deg);
+  }
+}
+
+.productCard:hover {
+  cursor: url("../../assets/images/you-cursor.png"), auto;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 5% 95%;
+}
+
+.productCardTitlebar {
+  display: grid;
+  grid-template-columns: 40% 20% 20% 20%;
+}
+
+.productCardMainArea {
+  display: grid;
+  grid-template-columns: 94% 6%;
+}
+
+.cardWindowOptions {
+  grid-column: 1;
+  justify-self: left;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  height: 20px;
+}
+
+.windowOptions {
+  margin: 0px 3px;
+  border: 0.1px solid grey;
+  border-radius: 25px;
+}
+
+.cardWindowOptions:hover > .windowOption1 {
+  fill: orange;
+  border: none;
+}
+
+.cardWindowOptions:hover > .windowOption2 {
+  fill: yellow;
+  border: none;
+}
+
+.cardWindowOptions:hover > .windowOption3 {
+  fill: green;
+  border: none;
+}
+
+.heroBtns {
+  grid-column: 2;
+  justify-self: center;
+}
+
+.item5 {
+  grid-column: 4;
+  justify-self: end;
+}
+
+.heroBtn {
+  background-color: #202020;
+  background-image: none;
+  border: 0.5px solid #202020;
+  border-radius: 4px;
+  margin: 0px 5px;
+  transition: transform 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.heroBtn:hover {
+  transform: scale(1.2);
+  cursor: url("../../assets/images/you-cursor.png"), auto;
+}
+
+.heroBtn:hover svg {
+  fill: #fff;
+  stroke: #fff;
+}
+
+.heroBtn svg {
+  transition: opacity 0.2s linear;
+}
+
+.heroBtn svg {
+  fill: #878786;
+  stroke: #878786;
+}
+
+.heroBtn:hover svg {
+  opacity: 1;
+}
+
+.mainAnimation {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  display: inline-grid;
+  grid-template-rows: 10%;
+}
+
+.mainAnimationContentGrid {
+  display: inline-grid;
+  grid-row: 2;
+  grid-template-columns: 7% 46% 47%;
+}
+
+.mainAnimationText {
+  grid-column: 2;
+}
+
+.mainAnimationTextAnnouncement {
+  font-size: 14px;
+  font-family: "Inter";
+  color: #fff;
+  border: 1px solid #7053ff;
+  border-radius: 25px;
+  background-color: #7053ff;
+  height: 22px;
+  width: 65%;
+  padding: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 2px 10px 0px;
+  text-decoration-line: none;
+  animation: appear 1.5s ease-out forwards;
+  animation-delay: 1.5s;
+  visibility: hidden;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.mainAnimationTextTitle {
+  font-size: 64px;
+  font-family: "Inter";
+  color: #fff;
+  font-weight: bolder;
+}
+
+.mainAnimationTextTitle :nth-child(1),
+.mainAnimationTextTitle :nth-child(2),
+.mainAnimationTextTitle :nth-child(3) {
+  white-space: nowrap;
+  overflow: hidden;
+  visibility: hidden;
+  animation: typing 1.5s steps(35) forwards;
+  animation-delay: 1.5s;
+  border-image-source: url("../../assets/images/jessica-cursor.png");
+  border-image-width: 24px 65px;
+  border-image-slice: 0 234 0 0;
+  border-image-outset: 0px 80px 0px 0px;
+}
+
+.mainAnimationTextTitle :nth-child(2) {
+  animation: typing 1.5s steps(50) forwards;
+}
+
+.mainAnimationTextTitle :nth-child(3) {
+  animation: typing-cursor-at-end 1.5s steps(56) forwards;
+}
+
+.mainAnimationTextTitle :nth-child(2) {
+  white-space: nowrap;
+  overflow: hidden;
+  animation-delay: calc(1.5s * 2);
+}
+
+.mainAnimationTextTitle :nth-child(3) {
+  white-space: nowrap;
+  overflow: hidden;
+  animation-delay: calc(1.5s * 3);
+}
+
+@keyframes typing {
+  0% {
+    width: 0;
+    visibility: hidden;
+  }
+
+  70% {
+    width: 99%;
+    visibility: visible;
+  }
+
+  to {
+    width: 100%;
+    visibility: visible;
+    border-image-source: none;
+  }
+}
+
+@keyframes typing-cursor-at-end {
+  from {
+    width: 0;
+    visibility: hidden;
+  }
+
+  to {
+    width: 75%;
+    visibility: visible;
+  }
+}
+
+.mainAnimationImageCarousel {
+  grid-column: 3;
+}
+
+.sideScreenImages {
+  grid-column: 2;
+  justify-self: center;
+  align-self: center;
+}
+
+.heroScreenImages {
+  height: 35px;
+  width: 55px;
+}
+
+.heroScreenBtn {
+  height: 35px;
+  width: 55px;
+  background-color: #1d1d1d;
+  background-image: url("../../assets/images/hero-plus.png");
+  background-size: cover;
+  background-size: 10px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 1px solid #1d1d1d;
+  border-radius: 5px;
+  cursor: url("../../assets/images/you-cursor.png"), auto;
+}
+
+.heroScreenBtn:hover {
+  transform: scale(1.1);
+}
+
+.heroScreenBtn {
+  transition: transform 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
