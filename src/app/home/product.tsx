@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import "./index.css";
 import DragAndDropSubtitle from "@/components/DragAndDropSubtitle";
-// import ImageCarouselSearchBar from "@/components/ImageCarouselAndSearchBar";
+import ImageCarouselSearchBar from "@/components/ImageCarouselAndSearchBar";
 
 export default function ProductCard() {
   const [rotation, setRotation] = useState(0);

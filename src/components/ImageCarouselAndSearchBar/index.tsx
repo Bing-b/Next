@@ -22,7 +22,7 @@ interface imageCarouselListItemType {
   name: String;
   SvgComponent: ReactElement<React.SVGProps<SVGSVGElement>>;
   color: string;
-  image: string;
+  image: any;
 }
 
 const ItemList: imageCarouselListItemType[] = [
