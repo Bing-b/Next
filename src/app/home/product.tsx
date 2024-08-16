@@ -11,17 +11,21 @@ export default function ProductCard() {
   const [scrollValue, setScrollValue] = useState(0);
 
   useEffect(() => {
+    // 确保只在客户端执行
     if (typeof window !== "undefined") {
       const handleScroll = () => {
         setScrollValue(window.scrollY);
-        console.log(scrollValue);
+        console.log(window.scrollY); // 直接使用window.scrollY
       };
+
       window.addEventListener("scroll", handleScroll);
+
+      // 清理函数，用于移除事件监听器
       return () => {
         window.removeEventListener("scroll", handleScroll);
       };
     }
-  }, [window.scrollY]);
+  }, []); // 依赖项数组为空，因为这个副作用不依赖于props或state
 
   useEffect(() => {
     setRotation(scrollValue / 4);

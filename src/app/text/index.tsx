@@ -51,4 +51,4 @@ export const Texts = () => {
   );
 };
 
-export default Text;
+export default Texts;
