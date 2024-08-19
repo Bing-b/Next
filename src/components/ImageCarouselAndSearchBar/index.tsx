@@ -1,26 +1,12 @@
 import React, { ReactElement, useEffect, useState } from "react";
-import arrow from "../../assets/images/arrow.png";
-import imageCarouselBlocksTitle from "../../assets/images/image-carousel-blocks-title.png";
-import Herotab1 from "../../assets/images/hero-tab-1.svg";
-import Herotab2 from "../../assets/images/hero-tab-2.svg";
-import Herotab3 from "../../assets/images/hero-tab-3.svg";
-import Herotab4 from "../../assets/images/hero-tab-4.svg";
-import Herotab5 from "../../assets/images/hero-tab-5.svg";
-import Herotab6 from "../../assets/images/hero-tab-6.svg";
-import slide1 from "../../assets/images/slide1.png";
-import slide2 from "../../assets/images/slide2.png";
-import slide3 from "../../assets/images/slide3.png";
-import slide4 from "../../assets/images/slide4.png";
-import slide5 from "../../assets/images/slide5.png";
-import slide6 from "../../assets/images/slide6.png";
-import searchbar from "../../assets/images/searchbar.png";
-import saracursor from "../../assets/images/sara-cursor.png";
 import "./index.css";
+
+import Image from "next/image";
 
 interface imageCarouselListItemType {
   index: number;
   name: String;
-  SvgComponent: ReactElement<React.SVGProps<SVGSVGElement>>;
+  SvgComponent: string;
   color: string;
   image: any;
 }
@@ -29,51 +15,51 @@ const ItemList: imageCarouselListItemType[] = [
   {
     index: 0,
     name: "Cards",
-    SvgComponent: <Herotab1 />,
+    SvgComponent: "/hero-tab-1.svg",
     color: "#409fd4",
-    image: slide1,
+    image: "/slide1.png",
   },
   {
     index: 1,
     name: "Numbers",
-    SvgComponent: <Herotab2 />,
+    SvgComponent: "/hero-tab-2.svg",
     color: "#5940d4",
-    image: slide2,
+    image: "/slide2.png",
   },
   {
     index: 2,
     name: "Trends",
-    SvgComponent: <Herotab3 />,
+    SvgComponent: "/hero-tab-3.svg",
     color: "#e2a11d",
-    image: slide3,
+    image: "/slide3.png",
   },
   {
     index: 3,
     name: "People",
-    SvgComponent: <Herotab4 />,
+    SvgComponent: "/hero-tab-4.svg",
     color: "#40b65b",
-    image: slide4,
+    image: "/slide4.png",
   },
   {
     index: 4,
     name: "Embeds",
-    SvgComponent: <Herotab5 />,
+    SvgComponent: "/hero-tab-5.svg",
     color: "#b640d4",
-    image: slide5,
+    image: "/slide5.png",
   },
   {
     index: 5,
     name: "Timeline",
-    SvgComponent: <Herotab6 />,
+    SvgComponent: "/hero-tab-6.svg",
     color: "#40c2d4",
-    image: slide6,
+    image: "/slide6.png",
   },
   {
     index: 6,
     name: "More",
-    SvgComponent: <Herotab1 />,
+    SvgComponent: "/hero-tab-1.svg",
     color: "#000000",
-    image: slide1,
+    image: "/slide1.png",
   },
 ];
 
@@ -91,17 +77,37 @@ function ImageCarouselSearchBar() {
   return (
     <div className="imageCarouselarea">
       <div className="searchbar">
-        <img className="searchbarImage" src={searchbar} />
+        <Image
+          src="/searchbar.png"
+          alt="Vercel Logo"
+          height={45}
+          width={496}
+          className="searchbarImage"
+          priority
+        />
+
         <div className="forwardSlash">/</div>
         <div className="searchbarMessage">Type "/" for shortcutsdd</div>
-        <img className="saracursor" src={saracursor} />
+
+        <Image
+          src="/sara-cursor.png"
+          alt="Vercel Logo"
+          height={40}
+          width={65}
+          className="saracursor"
+          priority
+        />
       </div>
       <div className="imageCarousel">
         <div className="imageCarouselListParent">
           <div className="imageCarouselListTitle">
-            <img
+            <Image
+              src="/image-carousel-blocks-title.png"
+              alt="Vercel Logo"
+              height={80}
+              width={20}
               className="imageCarouselBlocksTitle"
-              src={imageCarouselBlocksTitle}
+              priority
             />
           </div>
           <div className="imageCarouselList">
@@ -122,13 +128,27 @@ function ImageCarouselSearchBar() {
                       borderColor: item.index === activeIndex ? item.color : "",
                     }}
                   >
-                    <div className="heroSvgDiv">{item.SvgComponent}</div>
+                    <div className="heroSvgDiv">
+                      <Image
+                        src={item.SvgComponent}
+                        alt="Vercel Logo"
+                        height={80}
+                        width={20}
+                        priority
+                      />
+                    </div>
                   </div>
                   <div className="imageCarouselListItemText">
                     <p>{item.name}</p>
                   </div>
                   <div className="imageCarouselListItemArrow">
-                    <img src={arrow} />
+                    <Image
+                      src="/arrow.png"
+                      alt="Vercel Logo"
+                      height={80}
+                      width={20}
+                      priority
+                    />
                   </div>
                 </li>
               ))}
